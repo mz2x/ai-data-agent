@@ -1,0 +1,4 @@
+# Copy to .dev.vars for local `wrangler dev` (gitignored, never commit).
+# For the deployed Worker, set these with `wrangler secret put <NAME>` instead.
+ANTHROPIC_API_KEY=
+METABASE_API_KEY=

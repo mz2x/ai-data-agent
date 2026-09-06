@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "ai-data-agent-worker",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-16",
+  "observability": {
+    "enabled": true
+  },
+  "rules": [
+    { "type": "Text", "globs": ["**/*.txt", "**/*.html"], "fallthrough": true }
+  ],
+  "vars": {
+    "METABASE_URL": "https://metabase.example.com",
+    "MODEL": "claude-sonnet-5"
+  }
+  // Secrets (never in this file — set via `wrangler secret put <NAME>`,
+  // or in .dev.vars for local `wrangler dev`):
+  //   ANTHROPIC_API_KEY   — from console.anthropic.com
+  //   METABASE_API_KEY    — a read-only Metabase API key
+}

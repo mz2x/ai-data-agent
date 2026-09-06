@@ -1,0 +1,14 @@
+{
+  "name": "ai-data-agent-worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare Worker: chat page + API that answers natural-language questions by writing SQL and running it through Metabase, using Claude tool use.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.123.0"
+  }
+}

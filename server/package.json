@@ -1,0 +1,18 @@
+{
+  "name": "ai-data-agent-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Containerized port of worker/ — same agent, same prompt/schema/chat page, running as a plain Node http server (for environments that can't run Cloudflare Workers, e.g. inside a private VPC) instead of on Cloudflare's edge.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "dependencies": {
+    "@slack/bolt": "^5.0.0"
+  }
+}

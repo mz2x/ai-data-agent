@@ -1,0 +1,17 @@
+-- Demo schema for a generic e-commerce business. Replace this file with a
+-- compact export of your own database (same format: table_name(col:type,
+-- ...), "?" suffix on a column marks it nullable). This is NOT a real
+-- production schema — it exists so the agent has something concrete to
+-- reason about out of the box.
+
+customers(id:int, email:text, name:text, city_id:int?, created_at:timestamptz)
+regions(id:int, name:text)
+cities(id:int, region_id:int, name:text)
+products(id:int, name:text, category:text, price:numeric, is_active:bool)
+orders(id:int, customer_id:int, status:text, placed_at:timestamptz, fulfilled_at:timestamptz?, total_amount:numeric, payment_verified:bool)
+order_items(id:int, order_id:int, product_id:int, quantity:int, unit_price:numeric)
+promotions(id:int, name:text, kind:text, starts_at:timestamptz, ends_at:timestamptz?)
+promotion_redemptions(id:int, promotion_id:int, customer_id:int, order_id:int?, discount_amount:numeric, redeemed_at:timestamptz, is_voided:bool)
+leads(id:int, name:text, email:text, source:text, status:text, created_at:timestamptz, owner_id:int?)
+deals(id:int, lead_id:int, stage:text, value:numeric?, closed_at:timestamptz?)
+support_tickets(id:int, customer_id:int, subject:text, status:text, opened_at:timestamptz, closed_at:timestamptz?)

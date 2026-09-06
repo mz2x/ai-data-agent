@@ -1,0 +1,10 @@
+{
+  "name": "ai-data-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Ask questions in plain language, get answers sourced from a live Postgres database, via Claude writing SQL through Metabase's read-only API.",
+  "scripts": {
+    "query": "node query.js"
+  }
+}
